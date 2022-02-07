@@ -8,5 +8,6 @@ public class InvestmentConfiguration: IEntityTypeConfiguration<Investment>
 {
     public void Configure(EntityTypeBuilder<Investment> builder)
     {
+        builder.HasMany(b => b.Transactions);
     }
 }

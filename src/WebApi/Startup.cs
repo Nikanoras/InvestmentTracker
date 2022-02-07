@@ -6,7 +6,6 @@ namespace WebApi;
 
 public class Startup
 {
-    private string _myAllowSpecificOrigins = "_myAllowSpecificOrigins";
     public Startup(IConfiguration configuration)
     {
         Configuration = configuration;

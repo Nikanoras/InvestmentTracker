@@ -17,4 +17,5 @@ public class Investment
     public string Name { get; private set; }
     public string StockSymbol { get; private set; }
     public string Platform { get; private set; }
+    public ICollection<Transaction> Transactions { get; private set; } = new List<Transaction>();
 }
