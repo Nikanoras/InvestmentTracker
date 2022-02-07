@@ -6,4 +6,7 @@ public class GetInvestmentsQueryResult
     public string Name { get; set; }
     public string StockSymbol { get; set; }
     public string Platform { get; set; }
+    public decimal Shares { get; set; }
+    public decimal Invested { get; set; }
+    public decimal PricePerShare { get; set; }
 }

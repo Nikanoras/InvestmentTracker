@@ -22,7 +22,12 @@ public class GetInvestmentsQueryHandler : IRequestHandler<GetInvestmentsQuery, I
             Id = i.Id,
             Name = i.Name,
             Platform = i.Platform,
-            StockSymbol = i.StockSymbol
+            StockSymbol = i.StockSymbol,
+            Invested = i.Transactions.Sum(t => t.Shares * t.PricePerShare),
+            Shares = i.Transactions.Sum(t => t.Shares),
+            PricePerShare = i.Transactions.Sum(t => t.PricePerShare) > 0
+                ? i.Transactions.Sum(t => t.PricePerShare) / i.Transactions.Count
+                : 0
         }).ToListAsync(cancellationToken);
     }
 }

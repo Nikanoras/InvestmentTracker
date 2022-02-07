@@ -58,42 +58,31 @@ export default function Investments() {
                                             >
                                                 Platform
                                             </th>
+
+                                            <th
+                                                scope="col"
+                                                className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                            >
+                                                Shares
+                                            </th>
+                                            <th
+                                                scope="col"
+                                                className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                            >
+                                                Invested
+                                            </th>
+                                            <th
+                                                scope="col"
+                                                className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                            >
+                                                Price per share
+                                            </th>
                                             <th
                                                 scope="col"
                                                 className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                                             >
                                                 Actions
                                             </th>
-                                            {/* <th
-                                            scope="col"
-                                            className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                        >
-                                            Shares
-                                        </th>
-                                        <th
-                                            scope="col"
-                                            className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                        >
-                                            Invested
-                                        </th>
-                                        <th
-                                            scope="col"
-                                            className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                        >
-                                            Value
-                                        </th>
-                                        <th
-                                            scope="col"
-                                            className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                        >
-                                            Change
-                                        </th>
-                                        <th
-                                            scope="col"
-                                            className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                        >
-                                            Change %
-                                        </th> */}
                                         </tr>
                                     </thead>
                                     <tbody className="bg-white divide-y divide-gray-200">
@@ -117,61 +106,34 @@ export default function Investments() {
                                                         {investment.platform}
                                                     </div>
                                                 </td>
+
                                                 <td className="px-6 py-4 whitespace-nowrap">
-                                                    <div className="text-sm text-gray-900">
-                                                        <Link
-                                                            to={`${investment.id}/transactions/new`}
-                                                        >
-                                                            Add Transaction
-                                                        </Link>
-                                                    </div>
-                                                </td>
-                                                {/* <td className="px-6 py-4 whitespace-nowrap">
                                                     <div className="text-sm text-gray-900">
                                                         {investment.shares}
                                                     </div>
-                                                </td> */}
+                                                </td>
                                                 <td className="px-6 py-4 whitespace-nowrap">
                                                     <div className="text-sm text-gray-900">
-                                                        {/* $
-                                                    {investment.invested.toFixed(
-                                                        2,
-                                                    )} */}
+                                                        $
+                                                        {investment.invested.toFixed(
+                                                            2,
+                                                        )}
                                                     </div>
                                                 </td>
                                                 <td className="px-6 py-4 whitespace-nowrap">
-                                                    {/* <div className="text-sm text-gray-900">
-                                                    ${investment.value}
-                                                </div> */}
+                                                    <div className="text-sm text-gray-900">
+                                                        $
+                                                        {
+                                                            investment.pricePerShare
+                                                        }
+                                                    </div>
                                                 </td>
                                                 <td className="px-6 py-4 whitespace-nowrap">
-                                                    <div
-                                                        className={`text-sm ${
-                                                            calculateChange(
-                                                                investment.invested,
-                                                                investment.value,
-                                                            ) > 0
-                                                                ? 'text-green-400'
-                                                                : 'text-rose-400'
-                                                        }`}
+                                                    <Link
+                                                        to={`${investment.id}/transactions/new`}
                                                     >
-                                                        {/* $
-                                                    {calculateChange(
-                                                        investment.invested,
-                                                        investment.value,
-                                                    ).toFixed(2)} */}
-                                                    </div>
-                                                </td>
-                                                <td className="px-6 py-4 whitespace-nowrap">
-                                                    <div
-                                                        className={`text-sm text-gray-900`}
-                                                    >
-                                                        {/* {calculateChangePercentage(
-                                                        investment.invested,
-                                                        investment.value,
-                                                    ).toFixed(2)}
-                                                    % */}
-                                                    </div>
+                                                        Add Transaction
+                                                    </Link>
                                                 </td>
                                             </tr>
                                         ))}
