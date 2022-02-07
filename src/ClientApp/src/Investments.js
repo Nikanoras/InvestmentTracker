@@ -58,6 +58,12 @@ export default function Investments() {
                                             >
                                                 Platform
                                             </th>
+                                            <th
+                                                scope="col"
+                                                className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                            >
+                                                Actions
+                                            </th>
                                             {/* <th
                                             scope="col"
                                             className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
@@ -113,9 +119,18 @@ export default function Investments() {
                                                 </td>
                                                 <td className="px-6 py-4 whitespace-nowrap">
                                                     <div className="text-sm text-gray-900">
-                                                        {investment.shares}
+                                                        <Link
+                                                            to={`${investment.id}/transactions/new`}
+                                                        >
+                                                            Add Transaction
+                                                        </Link>
                                                     </div>
                                                 </td>
+                                                {/* <td className="px-6 py-4 whitespace-nowrap">
+                                                    <div className="text-sm text-gray-900">
+                                                        {investment.shares}
+                                                    </div>
+                                                </td> */}
                                                 <td className="px-6 py-4 whitespace-nowrap">
                                                     <div className="text-sm text-gray-900">
                                                         {/* $
